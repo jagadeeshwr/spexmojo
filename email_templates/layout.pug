@@ -1,0 +1,40 @@
+doctype html
+html
+    head
+        meta(charset='utf8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title Treble Quest
+        link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap', rel='stylesheet')
+    body(style="margin: 0;background: #f5f6f6;font-family: 'Open Sans', sans-serif;")
+        div(style="max-width: 750px;font-family: 'Open Sans', sans-serif;margin: 0 auto")
+            //- div(style='background-color: #00a79d;')
+            //-     a(href='https://ergoeval.treblequest.com/login',style='text-decoration: none;')
+            //-         img(src=HOST_URL + '/assets/images/email/emailTopHeaderLogo.png', style='max-width: 115px;padding: 25px;')
+            //-     img(src=HOST_URL + '/assets/images/email/emailToHeaderImage.png', style='float: right;max-width: 161px')
+            //-     div(style='clear: both;')
+            div(style='background: #fff;padding: 55px 10% 0px;color: #000;')
+                div(style=inPageTemplate? 'padding-bottom: 20px; text-align:center': 'padding-bottom: 20px;')
+
+                    block mainContent
+
+            if !inPageTemplate
+                div(style='background: #fff;padding: 10px 10% 45px;color: #000;margin-bottom: 30px;')
+                    div(style='border-bottom: 1px solid #f5f6f6;padding-bottom: 15px;')
+                        div(style='font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.86; letter-spacing: normal; color: #000000;')
+                            p(style='font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.86; letter-spacing: normal; color: #000000;')
+                            p(style='font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.86; letter-spacing: normal; color: #000000;') Many thanks,
+                            p(style='font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.86; letter-spacing: normal; color: #000000;') The Treblequest team
+                    //- div(style='font-size: 13px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: normal; text-align: center; color: #79828b;padding: 13px 0px 0px;')
+                    //-     | Contact:
+                    //-     a(href='mailto:info@treblequest.com', style='color: #79828b;text-decoration: none;')  info@treblequest.com
+                    //- div(style='font-size: 13px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: normal; text-align: center; color: #79828b;padding: 13px 0px 0px;')
+                    //-     | Treble Quest login:
+                    //-     a(href='https://ergoeval.treblequest.com/login', style='color: #79828b;text-decoration: none;')   https://ergoeval.treblequest.com/login
+                    //- div(style='font-size: 13px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: normal; text-align: center; color: #79828b;padding: 13px 0px 0px;')
+                    //-     | Review our Privacy Policy
+                    //-     a(href='https://www.treblequest.com/privacy-policy/')   here
+
+
+        if !inPageTemplate
+            div(style='margin: 0 auto;font-size: 10px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.8; letter-spacing: normal; text-align: center; color: #a0a0a0;max-width: 323px;margin-bottom: 30px;')
+                

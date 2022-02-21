@@ -1,0 +1,81 @@
+doctype html
+head
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500,600;700&display=swap' rel='stylesheet')
+div(style='text-align:center;padding:15px;')
+    a(style="pointer-events:none", href='#')
+        img(src=HOST_URL+'/images/logo.png' style='max-width: 150px;')
+div(style='background-color: #fcfcfc;padding: 20px 15px; text-align:center;')
+    if mailMessage.isReset
+        a(style="pointer-events:none", href='#')
+            img(src=HOST_URL+'/images/resetlogo.png' style='max-width: 150px;')
+    else
+        a(style="pointer-events:none", href='#')
+            img(src=HOST_URL+'/images/mail.png' style='max-width: 150px;')
+div(style='text-align: center;\
+border-bottom: 1px solid #ccc;\
+padding-bottom: 20px;\
+margin-bottom: 23px;    padding-top: 12px;')
+    if mailMessage.line1
+    h3(style='font-weight: 600;\
+  font-size: 15px;') #{mailMessage.line1}
+    if mailMessage.line2
+    h2(style='\
+  margin-top: 0;    font-size: 35px;\
+  margin-top: 0;\
+  margin-bottom: 0;') #{mailMessage.line2}
+    if mailMessage.line3
+    p #{mailMessage.line3}
+    if mailData && mailData.length
+        each d in mailData
+            p !{d.data}
+    if buttonText
+        a(href=redirectionLink style='font-weight: 600;\
+      background: #f52a5f;\
+      color: #fff;\
+      padding: 10px 30px;\
+      border-radius: 3px;\
+      margin: 10px 0;\
+      display: inline-block;text-decoration:none;')  #{buttonText}
+div
+    div(style='display: block;margin: 10px 0; text-align: center;')
+        a(href='https://www.facebook.com/TrebleQuestApp' style='width: 30px;margin:0px 5px;\
+      height: 30px;\
+      background: #ccc;\
+      border-radius: 100%;\
+      text-align: center;\
+      display: inline-block;    line-height: 37px;')
+            img(src=HOST_URL +'/images/facebook.png' style='width: 17px;')
+        a(href='https://www.instagram.com/treblequestapp/' style='width: 30px;margin:0px 5px;\
+      height: 30px;\
+      background: #ccc;\
+      border-radius: 100%;\
+      text-align: center;\
+      display: inline-block;    line-height: 37px;')
+            img(src=HOST_URL +'/images/instagram.png' style='width: 17px;')
+        a(href='https://twitter.com/TrebleQuestApp' style='width: 30px;margin:0px 5px;\
+      height: 30px;\
+      background: #ccc;\
+      border-radius: 100%;\
+      text-align: center;\
+      display: inline-block;    line-height: 37px;')
+            img(src=HOST_URL +'/images/twitter.png' style='width: 17px;')
+    div
+        div(style='font-size: 11px;\
+    font-weight: 600;text-align:center;')  Copyright &copy; 2021, Treblequest Today Inc.
+    //    div(style='color: #535353;\
+    //max-width: 400px;\
+    //font-size: 11px;\
+    //margin: 0 auto;\
+    //text-align: center;')
+    //        | This message was sent to
+    //        a(href='' style='color: #535353;font-weight:500;text-decoration: none;font-weight: 600;')  etmunan@jodadu.net
+    //        br
+    //        | If you do not wish to receive these emails
+    //        a(href='' style='color: #898989;')  unsubscribe here
+    //        | .
+
+
+script().
+    var HOST_URL = HOST_URL
