@@ -1,0 +1,53 @@
+html
+    head
+        meta(charset='utf8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title Treble Quest
+        link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap', rel='stylesheet')
+    body(style="margin: 0;background: #f5f6f6;font-family: 'Open Sans', sans-serif;")
+        div(style="max-width: 750px;font-family: 'Open Sans', sans-serif;margin: 0 auto")
+            div(style='background-color: #00a79d;padding: 20px')
+                a(href='https://ergoeval.treblequest.com/login')
+                    img(src=HOST_URL+'/assets/images/email/emailTopHeaderLogo.png', style='max-width: 115px')
+                div(style='max-width: 421px;margin: 20px auto 0;text-align: center;')
+                    div(style=' font-size: 36px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: normal; text-align: center; color: #ffffff;') #{"Hi " + name + ","}
+                    //- img(src=HOST_URL+'/assets/images/email/headerIcon.png', style='max-width: 350px;margin: 10px auto 30px;display: block;')
+                    div(style='font-size: 13px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 2.15; letter-spacing: normal; text-align: center; color: #ffffff;')
+                        
+                    //- a(href=redirectionLink, style='max-width: 257px; width: 100%; height: 50px; border-radius: 40px; background-color: #ffffff; font-size: 11px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 50px; letter-spacing: 0.92px; text-align: center; color: #00a79d; display: inline-block; text-decoration: none; margin-top: 20px;') ACTIVATE MY ACCOUNT
+            div(style='background: #fff;padding: 55px 11% 45px;color: #000;')
+                div(style='padding-bottom: 15px;')
+                    div(style='font-size: 19px; font-weight: 600; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: normal; color: #000000;') ACCOUNT ACTIVATION
+                    div(style=' font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.86; letter-spacing: normal; color: #000000;')
+                        p
+                            | To activate your account and access your profile, please click ‘ACTIVATE MY ACCOUNT’ below. If you have any access issues, please email to
+                            a(href='mailto:info@treblequest.com', style=' color: #79828b;text-decoration: none;')  info@treblequest.com
+                    a(href=redirectionLink, style='max-width: 257px; width: 100%; height: 50px; border-radius: 40px; background-color: #00a79d; font-size: 11px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 50px; letter-spacing: 0.92px; text-align: center; color: #ffffff; display: inline-block; text-decoration: none; margin-top: 20px;') ACTIVATE MY ACCOUNT
+                    div(style=' font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.86; letter-spacing: normal; color: #000000;padding-top: 10px;')
+                        p
+                            | If you are not the intended recipient of this email, please delete the email.
+                       
+                if bottomMailMessage
+                div(style='border-bottom: 1px solid #f5f6f6;')
+                    each line in bottomMailMessage
+                        p(style='font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.86; letter-spacing: normal; color: #000000;')
+                            if line.isBold
+                                b #{line.data}
+                            else if  line.isItalic
+                                i #{line.data}
+                            else if  line.isBoldItalic
+                                b
+                                    i #{line.data}
+                            else
+                                | !{line.data}
+                div(style='font-size: 13px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: normal; text-align: center; color: #79828b;padding: 11px 0px 0px;')
+                    | Contact: 
+                    a(href='mailto:info@treblequest.com', style=' color: #79828b;text-decoration: none;') info@treblequest.com
+                div(style='font-size: 13px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: normal; text-align: center; color: #79828b;padding: 13px 0px 0px;')
+                    | Treble Quest login:
+                    a(href='https://ergoeval.treblequest.com/login', style='color: #79828b;text-decoration: none;')   https://ergoeval.treblequest.com/login
+                div(style='font-size: 13px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: normal; text-align: center; color: #79828b;padding: 13px 0px 0px;')
+                    | Review our Privacy Policy
+                    a(href='https://www.treblequest.com/privacy-policy/')   here
+
+

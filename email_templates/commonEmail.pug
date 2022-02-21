@@ -1,0 +1,41 @@
+extends ./layout
+
+block mainContent
+    if name
+        div(style='font-size: 19px; font-weight: 600; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: normal; color: #000000;') #{"Hi " +name + ","}
+    div(style='font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.86; letter-spacing: normal; color: #000000;')
+
+    if mailMessage
+        each line in mailMessage
+            p(style='font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.86; letter-spacing: normal; color: #000000;')
+                if line.isBold
+                    b #{line.data}
+                else if  line.isItalic
+                    i #{line.data}
+                else if  line.isBoldItalic
+                    b
+                        i #{line.data}
+                else
+                    | !{line.data}
+
+        if redirectionLink
+            a(href=redirectionLink, style='max-width: 257px; width: 100%; height: 50px; border-radius: 40px; background-color: #00a79d; font-size: 14px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 50px; letter-spacing: 0.92px; text-align: center; color: #ffffff; display: inline-block; text-decoration: none; margin-top: 20px;') #{buttonText}
+
+        if images
+            each url in images
+                img(src=url)
+
+
+        if bottomMailMessage
+            each line in bottomMailMessage
+                p(style='font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.86; letter-spacing: normal; color: #000000;')
+                    if line.isBold
+                        b #{line.data}
+                    else if  line.isItalic
+                        i #{line.data}
+                    else if  line.isBoldItalic
+                        b
+                            i #{line.data}
+                    else
+                        | !{line.data}
+
